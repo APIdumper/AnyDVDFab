@@ -1,0 +1,1153 @@
+{
+    "id": "root",
+    "title": "HTTP Toolkit Rules",
+    "isRoot": true,
+    "items": [
+        {
+            "id": "f871b01c-2403-4535-89c6-871e9d22abc1",
+            "type": "http",
+            "activated": true,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "type": "regex-path",
+                    "regexSource": "https:\\/\\/.+\\/auth\\/v[0-5]+\\/",
+                    "regexFlags": ""
+                }
+            ],
+            "handler": {
+                "data": {
+                    "type": "Buffer",
+                    "data": null
+                },
+                "status": 200,
+                "headers": {
+                    "content-type": "text/html"
+                },
+                "type": "simple"
+            },
+            "completionChecker": {
+                "type": "always"
+            }
+        },
+        {
+            "id": "16398459-56b6-42b0-a65c-b8b5a77eac9c",
+            "type": "http",
+            "activated": false,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "type": "regex-path",
+                    "regexSource": "https:\\/\\/.+\\/ak\\/uc_v[0-9]+\\/",
+                    "regexFlags": ""
+                }
+            ],
+            "completionChecker": {
+                "type": "always"
+            },
+            "handler": {
+                "uiType": "forward-to-host",
+                "type": "passthrough",
+                "forwarding": {
+                    "targetHost": "http://127.0.0.1:5000",
+                    "updateHostHeader": false
+                }
+            }
+        },
+        {
+            "id": "e4614b6d-4644-489c-b91f-3c96a04170b1",
+            "type": "http",
+            "activated": true,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "path": "https://ssl-jp.dvdfab.cn/ak/v[0-9]+/st/",
+                    "type": "simple-path"
+                }
+            ],
+            "completionChecker": {
+                "type": "always"
+            },
+            "handler": {
+                "data": {
+                    "type": "Buffer",
+                    "data": [
+                        123,
+                        34,
+                        82,
+                        34,
+                        58,
+                        34,
+                        48,
+                        34,
+                        125
+                    ]
+                },
+                "status": 200,
+                "headers": {
+                    "content-type": "text/html; charset=UTF-8"
+                },
+                "type": "simple"
+            }
+        },
+        {
+            "id": "24f536d5-16aa-4917-bef2-b71e01425af8",
+            "type": "http",
+            "activated": true,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "path": "https://.+/client/command",
+                    "type": "simple-path"
+                }
+            ],
+            "completionChecker": {
+                "type": "always"
+            },
+            "handler": {
+                "type": "close-connection"
+            }
+        },
+        {
+            "id": "00ca5f1c-6437-4ae8-9067-391faa631ba9",
+            "type": "http",
+            "activated": true,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "type": "regex-path",
+                    "regexSource": "https:\\/\\/servo-slave-[0-9]+\\.dvdfab\\.cn\\/recommend\\/client\\/best\\/list",
+                    "regexFlags": ""
+                }
+            ],
+            "completionChecker": {
+                "type": "always"
+            },
+            "handler": {
+                "data": {
+                    "type": "Buffer",
+                    "data": [
+                        123,
+                        34,
+                        99,
+                        115,
+                        99,
+                        111,
+                        100,
+                        101,
+                        34,
+                        58,
+                        50,
+                        48,
+                        48,
+                        44,
+                        34,
+                        118,
+                        101,
+                        114,
+                        115,
+                        105,
+                        111,
+                        110,
+                        34,
+                        58,
+                        34,
+                        49,
+                        46,
+                        48,
+                        46,
+                        48,
+                        34,
+                        44,
+                        34,
+                        100,
+                        97,
+                        116,
+                        97,
+                        34,
+                        58,
+                        91,
+                        93,
+                        125
+                    ]
+                },
+                "status": 200,
+                "headers": {
+                    "content-type": "application/json"
+                },
+                "type": "simple"
+            }
+        },
+        {
+            "id": "db945deb-c7aa-49c5-8529-5314d86baf5c",
+            "type": "http",
+            "activated": true,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "type": "regex-path",
+                    "regexSource": "https:\\/\\/app-api-c[0-9]+\\.dvdfab\\.cn\\/api\\/info_control\\/",
+                    "regexFlags": ""
+                }
+            ],
+            "completionChecker": {
+                "type": "always"
+            },
+            "handler": {
+                "data": {
+                    "type": "Buffer",
+                    "data": [
+                        123,
+                        34,
+                        114,
+                        101,
+                        115,
+                        117,
+                        108,
+                        116,
+                        34,
+                        58,
+                        123,
+                        34,
+                        114,
+                        101,
+                        115,
+                        34,
+                        58,
+                        34,
+                        116,
+                        114,
+                        117,
+                        101,
+                        34,
+                        44,
+                        34,
+                        109,
+                        115,
+                        103,
+                        34,
+                        58,
+                        34,
+                        111,
+                        107,
+                        34,
+                        44,
+                        34,
+                        100,
+                        97,
+                        116,
+                        97,
+                        34,
+                        58,
+                        91,
+                        123,
+                        34,
+                        112,
+                        111,
+                        115,
+                        95,
+                        105,
+                        100,
+                        34,
+                        58,
+                        49,
+                        44,
+                        34,
+                        105,
+                        100,
+                        34,
+                        58,
+                        45,
+                        49,
+                        44,
+                        34,
+                        101,
+                        110,
+                        97,
+                        98,
+                        108,
+                        101,
+                        34,
+                        58,
+                        102,
+                        97,
+                        108,
+                        115,
+                        101,
+                        44,
+                        34,
+                        112,
+                        111,
+                        115,
+                        34,
+                        58,
+                        34,
+                        65,
+                        100,
+                        32,
+                        119,
+                        104,
+                        101,
+                        110,
+                        32,
+                        97,
+                        112,
+                        112,
+                        32,
+                        115,
+                        116,
+                        97,
+                        114,
+                        116,
+                        34,
+                        44,
+                        34,
+                        114,
+                        101,
+                        99,
+                        111,
+                        109,
+                        109,
+                        101,
+                        110,
+                        100,
+                        95,
+                        100,
+                        97,
+                        116,
+                        97,
+                        34,
+                        58,
+                        34,
+                        34,
+                        125,
+                        44,
+                        123,
+                        34,
+                        112,
+                        111,
+                        115,
+                        95,
+                        105,
+                        100,
+                        34,
+                        58,
+                        50,
+                        44,
+                        34,
+                        105,
+                        100,
+                        34,
+                        58,
+                        53,
+                        48,
+                        48,
+                        50,
+                        44,
+                        34,
+                        101,
+                        110,
+                        97,
+                        98,
+                        108,
+                        101,
+                        34,
+                        58,
+                        116,
+                        114,
+                        117,
+                        101,
+                        44,
+                        34,
+                        112,
+                        111,
+                        115,
+                        34,
+                        58,
+                        34,
+                        78,
+                        101,
+                        119,
+                        32,
+                        112,
+                        114,
+                        111,
+                        100,
+                        117,
+                        99,
+                        116,
+                        32,
+                        97,
+                        100,
+                        32,
+                        119,
+                        104,
+                        101,
+                        110,
+                        32,
+                        97,
+                        112,
+                        112,
+                        32,
+                        115,
+                        116,
+                        97,
+                        114,
+                        116,
+                        34,
+                        44,
+                        34,
+                        114,
+                        101,
+                        99,
+                        111,
+                        109,
+                        109,
+                        101,
+                        110,
+                        100,
+                        95,
+                        100,
+                        97,
+                        116,
+                        97,
+                        34,
+                        58,
+                        34,
+                        34,
+                        125,
+                        44,
+                        123,
+                        34,
+                        112,
+                        111,
+                        115,
+                        95,
+                        105,
+                        100,
+                        34,
+                        58,
+                        53,
+                        44,
+                        34,
+                        105,
+                        100,
+                        34,
+                        58,
+                        53,
+                        48,
+                        48,
+                        48,
+                        44,
+                        34,
+                        101,
+                        110,
+                        97,
+                        98,
+                        108,
+                        101,
+                        34,
+                        58,
+                        116,
+                        114,
+                        117,
+                        101,
+                        44,
+                        34,
+                        112,
+                        111,
+                        115,
+                        34,
+                        58,
+                        34,
+                        65,
+                        100,
+                        32,
+                        97,
+                        116,
+                        32,
+                        98,
+                        111,
+                        116,
+                        116,
+                        111,
+                        109,
+                        32,
+                        111,
+                        102,
+                        32,
+                        117,
+                        105,
+                        34,
+                        44,
+                        34,
+                        114,
+                        101,
+                        99,
+                        111,
+                        109,
+                        109,
+                        101,
+                        110,
+                        100,
+                        95,
+                        100,
+                        97,
+                        116,
+                        97,
+                        34,
+                        58,
+                        34,
+                        34,
+                        125,
+                        44,
+                        123,
+                        34,
+                        112,
+                        111,
+                        115,
+                        95,
+                        105,
+                        100,
+                        34,
+                        58,
+                        54,
+                        44,
+                        34,
+                        105,
+                        100,
+                        34,
+                        58,
+                        45,
+                        49,
+                        44,
+                        34,
+                        101,
+                        110,
+                        97,
+                        98,
+                        108,
+                        101,
+                        34,
+                        58,
+                        102,
+                        97,
+                        108,
+                        115,
+                        101,
+                        44,
+                        34,
+                        112,
+                        111,
+                        115,
+                        34,
+                        58,
+                        34,
+                        65,
+                        100,
+                        32,
+                        97,
+                        116,
+                        32,
+                        108,
+                        101,
+                        102,
+                        116,
+                        32,
+                        98,
+                        111,
+                        116,
+                        116,
+                        111,
+                        109,
+                        32,
+                        99,
+                        111,
+                        114,
+                        110,
+                        101,
+                        114,
+                        34,
+                        44,
+                        34,
+                        114,
+                        101,
+                        99,
+                        111,
+                        109,
+                        109,
+                        101,
+                        110,
+                        100,
+                        95,
+                        100,
+                        97,
+                        116,
+                        97,
+                        34,
+                        58,
+                        34,
+                        34,
+                        125,
+                        44,
+                        123,
+                        34,
+                        112,
+                        111,
+                        115,
+                        95,
+                        105,
+                        100,
+                        34,
+                        58,
+                        50,
+                        48,
+                        48,
+                        48,
+                        44,
+                        34,
+                        105,
+                        100,
+                        34,
+                        58,
+                        49,
+                        49,
+                        48,
+                        50,
+                        44,
+                        34,
+                        101,
+                        110,
+                        97,
+                        98,
+                        108,
+                        101,
+                        34,
+                        58,
+                        116,
+                        114,
+                        117,
+                        101,
+                        44,
+                        34,
+                        112,
+                        111,
+                        115,
+                        34,
+                        58,
+                        34,
+                        65,
+                        100,
+                        32,
+                        105,
+                        110,
+                        32,
+                        108,
+                        105,
+                        118,
+                        101,
+                        117,
+                        112,
+                        100,
+                        97,
+                        116,
+                        101,
+                        32,
+                        100,
+                        105,
+                        97,
+                        108,
+                        111,
+                        103,
+                        34,
+                        44,
+                        34,
+                        114,
+                        101,
+                        99,
+                        111,
+                        109,
+                        109,
+                        101,
+                        110,
+                        100,
+                        95,
+                        100,
+                        97,
+                        116,
+                        97,
+                        34,
+                        58,
+                        34,
+                        34,
+                        125,
+                        44,
+                        123,
+                        34,
+                        112,
+                        111,
+                        115,
+                        95,
+                        105,
+                        100,
+                        34,
+                        58,
+                        56,
+                        44,
+                        34,
+                        105,
+                        100,
+                        34,
+                        58,
+                        53,
+                        49,
+                        48,
+                        51,
+                        44,
+                        34,
+                        101,
+                        110,
+                        97,
+                        98,
+                        108,
+                        101,
+                        34,
+                        58,
+                        116,
+                        114,
+                        117,
+                        101,
+                        44,
+                        34,
+                        112,
+                        111,
+                        115,
+                        34,
+                        58,
+                        34,
+                        65,
+                        100,
+                        32,
+                        97,
+                        116,
+                        32,
+                        108,
+                        105,
+                        99,
+                        101,
+                        110,
+                        115,
+                        101,
+                        32,
+                        105,
+                        110,
+                        102,
+                        111,
+                        34,
+                        44,
+                        34,
+                        114,
+                        101,
+                        99,
+                        111,
+                        109,
+                        109,
+                        101,
+                        110,
+                        100,
+                        95,
+                        100,
+                        97,
+                        116,
+                        97,
+                        34,
+                        58,
+                        34,
+                        34,
+                        125,
+                        93,
+                        125,
+                        125
+                    ]
+                },
+                "status": 200,
+                "headers": {
+                    "content-type": "text/html; charset=UTF-8"
+                },
+                "type": "simple"
+            }
+        },
+        {
+            "id": "6d94200f-6f2c-4231-9435-bcc212dbfe86",
+            "type": "http",
+            "activated": true,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "type": "regex-path",
+                    "regexSource": "https:\\/\\/drm-u[0-9]+\\.dvdfab\\.cn\\/ak\\/re\\/downloadex\\/",
+                    "regexFlags": ""
+                }
+            ],
+            "handler": {
+                "data": {
+                    "type": "Buffer",
+                    "data": [
+                        123,
+                        34,
+                        82,
+                        34,
+                        58,
+                        34,
+                        48,
+                        34,
+                        44,
+                        34,
+                        110,
+                        117,
+                        109,
+                        34,
+                        58,
+                        49,
+                        48,
+                        48,
+                        44,
+                        34,
+                        99,
+                        111,
+                        117,
+                        110,
+                        116,
+                        34,
+                        58,
+                        34,
+                        49,
+                        48,
+                        48,
+                        34,
+                        125
+                    ]
+                },
+                "status": 200,
+                "headers": {
+                    "content-type": "text/html; charset=UTF-8"
+                },
+                "type": "simple"
+            },
+            "completionChecker": {
+                "type": "always"
+            }
+        },
+        {
+            "id": "f219b76f-82f5-46ce-8290-e38ad0d043d5",
+            "type": "http",
+            "activated": true,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "type": "regex-path",
+                    "regexSource": "https:\\/\\/app-api-c[0-9]+\\.dvdfab\\.cn\\/api\\/common_json_post\\/",
+                    "regexFlags": ""
+                }
+            ],
+            "handler": {
+                "data": {
+                    "type": "Buffer",
+                    "data": [
+                        123,
+                        34,
+                        114,
+                        101,
+                        115,
+                        117,
+                        108,
+                        116,
+                        34,
+                        58,
+                        123,
+                        34,
+                        114,
+                        101,
+                        115,
+                        34,
+                        58,
+                        116,
+                        114,
+                        117,
+                        101,
+                        44,
+                        34,
+                        109,
+                        115,
+                        103,
+                        34,
+                        58,
+                        34,
+                        78,
+                        79,
+                        95,
+                        69,
+                        82,
+                        82,
+                        79,
+                        82,
+                        34,
+                        125,
+                        125
+                    ]
+                },
+                "status": 200,
+                "headers": {},
+                "type": "simple"
+            },
+            "completionChecker": {
+                "type": "always"
+            }
+        },
+        {
+            "id": "dac79a95-6dfb-4f0a-a6e1-e7ac97122287",
+            "type": "http",
+            "activated": true,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "type": "regex-path",
+                    "regexSource": "https:\\/\\/drm-u[0-9]+\\.dvdfab\\.cn\\/ak\\/re\\/keycheck\\/",
+                    "regexFlags": ""
+                }
+            ],
+            "completionChecker": {
+                "type": "always"
+            },
+            "handler": {
+                "data": {
+                    "type": "Buffer",
+                    "data": [
+                        123,
+                        34,
+                        82,
+                        34,
+                        58,
+                        34,
+                        48,
+                        34,
+                        44,
+                        34,
+                        114,
+                        101,
+                        116,
+                        34,
+                        58,
+                        34,
+                        115,
+                        117,
+                        99,
+                        99,
+                        101,
+                        115,
+                        115,
+                        34,
+                        125
+                    ]
+                },
+                "status": 200,
+                "headers": {
+                    "content-type": "text/html; charset=UTF-8"
+                },
+                "type": "simple"
+            }
+        },
+        {
+            "id": "b698af72-0681-4a21-ac04-6215ec09470c",
+            "type": "http",
+            "activated": false,
+            "matchers": [
+                {
+                    "method": 1,
+                    "type": "method",
+                    "uiType": "POST"
+                },
+                {
+                    "type": "regex-path",
+                    "regexSource": "https:\\/\\/.+\\/c[0-9]+\\/",
+                    "regexFlags": ""
+                }
+            ],
+            "completionChecker": {
+                "type": "always"
+            },
+            "handler": {
+                "uiType": "forward-to-host",
+                "type": "passthrough",
+                "forwarding": {
+                    "targetHost": "http://127.0.0.1:5000",
+                    "updateHostHeader": false
+                }
+            }
+        },
+        {
+            "id": "default-group",
+            "title": "Default rules",
+            "items": [
+                {
+                    "id": "default-android-certificate",
+                    "type": "http",
+                    "activated": true,
+                    "priority": 2,
+                    "matchers": [
+                        {
+                            "method": 0,
+                            "type": "method",
+                            "uiType": "GET"
+                        },
+                        {
+                            "path": "http://android.httptoolkit.tech/config",
+                            "type": "simple-path"
+                        }
+                    ],
+                    "handler": {
+                        "data": "{\"certificate\":\"-----BEGIN CERTIFICATE-----\\r\\nMIIDTzCCAjegAwIBAgIRCnHEg7olU0ofnZjTTUXG6wswDQYJKoZIhvcNAQELBQAw\\r\\nQTEYMBYGA1UEAxMPSFRUUCBUb29sa2l0IENBMQswCQYDVQQGEwJYWDEYMBYGA1UE\\r\\nChMPSFRUUCBUb29sa2l0IENBMB4XDTIzMDkxMjE4MzgxMVoXDTI0MDkxMzE4Mzgx\\r\\nMVowQTEYMBYGA1UEAxMPSFRUUCBUb29sa2l0IENBMQswCQYDVQQGEwJYWDEYMBYG\\r\\nA1UEChMPSFRUUCBUb29sa2l0IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB\\r\\nCgKCAQEAtM2WXyQFHfQmYWDC5YDemoJNbIHtBFpzUyXPubumrkdcfjhra2yVGUdw\\r\\nEcJueIXJ8VNX/qFhgAVphItL6NspUGYJ0CrjEMZvgDUef+pMjFQu/jEPV438cEiI\\r\\nFwVyPFats7vuqD4Sm1eih/vwD27k8PY0kEW3xJrZArqFKVf82do2b1kYNsZdDSe7\\r\\nJ20S8E37myb2mbfzAuHrBdtaENgdKp0w+H6GyFqErhoe6l+VhobVObtb0APWEsHC\\r\\nJeEJvBmN1kOKdVKeTuuNGNt2FACdzHfjYkU4gaFc4GMhTRxAhU9sKYF7sHjzyH5b\\r\\nUpBxXUujsoxlltJdmwV/YaS9DIqxWwIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/\\r\\nMA4GA1UdDwEB/wQEAwIBxjAdBgNVHQ4EFgQUGChpT6ZjtsS/72TlbHUCAODrxRsw\\r\\nDQYJKoZIhvcNAQELBQADggEBAH2p5mrxm9UtOVOOul1+DXapC9WQTL5oz/6glRjr\\r\\nmD4Shpsol2GHUrCuaWJM6aRw+xvqCZ9UGypey+QarFE14DSXysLZFeArv7ELFhbD\\r\\njNUNs0eIyj6uEn0HHVNoI/zqGCCpXJhqhmFdju8L49E2TeSr3TxfG7Lh++PZgT8/\\r\\n5RDNjqFeniOyGRVfEAoeIkAZrTtipj1LYmmBIoWW9q4VJN/Pn5OUbyC/Fmo9FTMM\\r\\nqCexb9LC0oie7T97BEEHxfDibb8Wpanxuuo7ztMNRb0dLNGex/s5T3FzTU0EaLaA\\r\\ndqteofIDRKKS7i5m0w7UQ1L1HYO7MBjzUD+V77Le+WKNDoM=\\r\\n-----END CERTIFICATE-----\\r\\n\"}",
+                        "status": 200,
+                        "headers": {
+                            "content-type": "application/json"
+                        },
+                        "type": "simple"
+                    },
+                    "completionChecker": {
+                        "type": "always"
+                    }
+                },
+                {
+                    "id": "default-amiusing",
+                    "type": "http",
+                    "activated": true,
+                    "priority": 2,
+                    "matchers": [
+                        {
+                            "method": 0,
+                            "type": "method",
+                            "uiType": "GET"
+                        },
+                        {
+                            "type": "regex-path",
+                            "regexSource": "^https?:\\/\\/amiusing\\.httptoolkit\\.tech\\/?$",
+                            "regexFlags": "",
+                            "uiType": "am-i-using"
+                        }
+                    ],
+                    "handler": {
+                        "data": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />\n  <script type=\"application/json\" id=\"amiusing\">\n    { \"amiusing\": true }\n  </script>\n  <title>\n    Are you using HTTP Toolkit? Yes!\n  </title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n  <style>\n    html {\n      height: 100%;\n    }\n\n    body {\n      min-height: 100%;\n      box-sizing: border-box;\n      margin: 0;\n      padding: 8px;\n\n      background-color: #d8e2e6;\n      font-family: Lato;\n      line-height: 1.3;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n\n    .content {\n      max-width: 600px;\n    }\n\n    h1 {\n      font-size: 36pt;\n    }\n\n    p {\n      font-size: 18pt;\n    }\n\n    .logo {\n      display: block;\n      margin: 40px auto;\n      height: 200px;\n      width: 200px;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"content\">\n    <h1>You're being intercepted by HTTP Toolkit</h1>\n    <p>\n      This response came from HTTP Toolkit, which is currently intercepting this connection.\n    </p>\n    <p>\n      All requests made by this browser will be recorded by HTTP Toolkit.\n      Take a look at the 'View' tab there now to see the request & response\n      that brought you this page, or start browsing elsewhere to collect more data.\n    </p>\n  </div>\n  <link href=\"https://fonts.googleapis.com/css?family=Lato&display=block\" rel=\"stylesheet\" />\n</body>\n</html>",
+                        "status": 200,
+                        "headers": {
+                            "content-type": "text/html",
+                            "cache-control": "no-store",
+                            "httptoolkit-active": "true"
+                        },
+                        "type": "simple"
+                    },
+                    "completionChecker": {
+                        "type": "always"
+                    }
+                },
+                {
+                    "id": "default-certificate",
+                    "type": "http",
+                    "activated": true,
+                    "priority": 2,
+                    "matchers": [
+                        {
+                            "method": 0,
+                            "type": "method",
+                            "uiType": "GET"
+                        },
+                        {
+                            "path": "amiusing.httptoolkit.tech/certificate",
+                            "type": "simple-path"
+                        }
+                    ],
+                    "handler": {
+                        "status": 200,
+                        "filePath": null,
+                        "headers": {
+                            "content-type": "application/x-x509-ca-cert"
+                        },
+                        "type": "file"
+                    },
+                    "completionChecker": {
+                        "type": "always"
+                    }
+                },
+                {
+                    "id": "default-wildcard",
+                    "type": "http",
+                    "activated": true,
+                    "matchers": [
+                        {
+                            "type": "wildcard",
+                            "uiType": "default-wildcard"
+                        }
+                    ],
+                    "handler": {
+                        "type": "passthrough"
+                    },
+                    "completionChecker": {
+                        "type": "always"
+                    }
+                },
+                {
+                    "id": "default-ws-wildcard",
+                    "type": "websocket",
+                    "activated": true,
+                    "matchers": [
+                        {
+                            "type": "wildcard",
+                            "uiType": "default-ws-wildcard"
+                        }
+                    ],
+                    "handler": {
+                        "type": "ws-passthrough"
+                    },
+                    "completionChecker": {
+                        "type": "always"
+                    }
+                }
+            ]
+        }
+    ]
+}
